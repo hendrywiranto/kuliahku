@@ -1,9 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Login</title>
-</head>
-<body>
-	<form method="POST" action="login-method.php"></form>
-</body>
-</html>
+<?php
+	session_start();
+	if(!isset($_SESSION['email'])){
+		header("Location: login.php");
+		die;
+	}
+
+	echo "Halaman ini muncul jika anda sudah berhasil login";
+	?><a href="logout.php">Keluar</a><?php
+?>
