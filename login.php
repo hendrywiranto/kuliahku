@@ -1,5 +1,9 @@
-<?php 
+<?php
       session_start();
+      if(isset($_SESSION['email'])){
+            header("Location: index.php");
+            die;
+      }
 ?>
 
 <!DOCTYPE html>
@@ -145,20 +149,21 @@ footer {
 
 <body>
   <div class='preload login--container'>
-
+  <form method="POST" action="">
     <div class='login--form'>
       <div class='login--username-container'>
-        <label>Username</label>
-        <input autofocus placeholder='Username' type='text'>
+        <label>Email</label>
+        <input autofocus id="email" name="email" placeholder="Email" type='text'>
         <small>Belum punya akun? <a href="register.php">Daftar disini</a></small>
       </div>
       
       <div class='login--password-container'>
         <label>Password</label>
-        <input placeholder='Password' type='password'>
-        <button class='js-toggle-login login--login-submit' id="submit">Login</button>
+        <input placeholder='Password' id="password" name="password" type='password'>
+        <input class='js-toggle-login login--login-submit' type="submit" name="submit" id="submit" value="Login">
       </div>
     </div>
+    </form>
     <?php
       if(isset($_POST['submit'])){
         include "connect.php";

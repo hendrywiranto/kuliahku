@@ -9,6 +9,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Register</title>
+
 <meta charset="utf-8">
 <link href="css/style_register.css" rel='stylesheet' type='text/css' />
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,13 +24,13 @@
 	<h3 style="font-size: 36px">REGISTER</h3>
 		<form method="post" action="">
 		   <div class="lable-2">
-		   		<input type="text" class="text" value="Name" onfocus="this.value = '';"onblur="if (this.value == '') {this.value = 'nama';}" required>
-		        <input type="text" class="text" value="your@email.com " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'your@email.com ';}">
-		        <input type="password" class="text" value="Password " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password ';}">
+		   		<input type="text" id="nama" name="nama" class="text" value="Name" onfocus="this.value = '';"onblur="if (this.value == '') {this.value = 'nama';}" required>
+		        <input type="text" id="email" name="email" class="text" value="your@email.com " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'your@email.com ';}">
+		        <input type="password" id="password" name="password" class="text" value="Password " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password ';}">
 		   </div>
 		   
 		   <div class="submit">
-			  <input type="submit" onclick="myFunction()" value="Create account" >
+			  <input type="submit" id="submit" name="submit" onclick="myFunction()" value="Create account" >
 		   </div>
 		   <div class="clear"> </div>
 		</form>
