@@ -9,18 +9,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Register</title>
+<meta charset="utf-8">
+<link href="css/style_register.css" rel='stylesheet' type='text/css' />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--webfonts-->
+<link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+<!--//webfonts-->
 </head>
 <body>
-	<h1>Register Yourself</h1>
-	<form method="post" action="">
-		<input type="nama" name="nama" placeholder="Nama" required>
-	  	<input type="email" name="email" placeholder="Email" required>
-	  	<input type="password" name="password" placeholder="password" required="">
-	  	<input type="submit" name="submit" value="Log In">
-	</form>
-
-	<?php
+<div class="main">
+	<h3 style="font-size: 36px">REGISTER</h3>
+		<form method="post" action="">
+		   <div class="lable-2">
+		   		<input type="text" class="text" value="Name" onfocus="this.value = '';"onblur="if (this.value == '') {this.value = 'nama';}" required>
+		        <input type="text" class="text" value="your@email.com " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'your@email.com ';}">
+		        <input type="password" class="text" value="Password " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password ';}">
+		   </div>
+		   
+		   <div class="submit">
+			  <input type="submit" onclick="myFunction()" value="Create account" >
+		   </div>
+		   <div class="clear"> </div>
+		</form>
+		<?php
 		if(isset($_POST['submit'])){
 			include "connect.php";
 
@@ -38,5 +50,6 @@
 			mysqli_close($db);
 		}
 	?>
+		</div>
 </body>
 </html>
