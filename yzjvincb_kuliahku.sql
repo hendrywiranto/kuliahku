@@ -1,22 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
---
--- Host: 127.0.0.1
--- Generation Time: May 04, 2017 at 11:23 AM
--- Server version: 10.1.16-MariaDB
--- PHP Version: 7.0.9
-
-SET FOREIGN_KEY_CHECKS=0;
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
 --
 -- Database: `yzjvincb_kuliahku`
 --
@@ -26,7 +7,7 @@ DELIMITER $$
 -- Procedures
 --
 DROP PROCEDURE IF EXISTS `sp_daftar`$$
-CREATE PROCEDURE `sp_daftar` (`p_nama` VARCHAR(32), `p_email` VARCHAR(32), `p_password` VARCHAR(32))  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_daftar` (`p_nama` VARCHAR(32), `p_email` VARCHAR(32), `p_password` VARCHAR(32))  BEGIN
 	IF NOT EXISTS(SELECT 1 FROM users WHERE u_email = p_email) THEN
 		IF NOT EXISTS(SELECT 1 FROM users WHERE p_nama = u_name) THEN
 			INSERT INTO users(u_name, u_email, u_password)
@@ -41,7 +22,7 @@ CREATE PROCEDURE `sp_daftar` (`p_nama` VARCHAR(32), `p_email` VARCHAR(32), `p_pa
     END$$
 
 DROP PROCEDURE IF EXISTS `sp_login`$$
-CREATE PROCEDURE `sp_login` (`p_email` VARCHAR(32), `p_password` VARCHAR(32))  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_login` (`p_email` VARCHAR(32), `p_password` VARCHAR(32))  BEGIN
 	IF EXISTS(SELECT 1 FROM users WHERE p_email = u_email) THEN
 		IF EXISTS(SELECT 2 FROM users WHERE MD5(p_password) = u_password AND p_email = u_email) THEN
 			SELECT 0,'Login sukes', (SELECT id FROM users WHERE p_email = u_email) AS user_id;
@@ -188,6 +169,30 @@ INSERT INTO `users` (`id`, `u_name`, `u_email`, `u_password`, `remember_token`, 
 (2, 'rogo', 'rogo@mail.com', '5f4dcc3b5aa765d61d8327deb882cf99', NULL, NULL, NULL),
 (3, 'hendry', 'hendry@mail.com', '5f4dcc3b5aa765d61d8327deb882cf99', NULL, NULL, NULL);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_matkul`
+--
+
+DROP TABLE IF EXISTS `user_matkul`;
+CREATE TABLE `user_matkul` (
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `matkul_id` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_tugas`
+--
+
+DROP TABLE IF EXISTS `user_tugas`;
+CREATE TABLE `user_tugas` (
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `id_tugas` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Indexes for dumped tables
 --
@@ -238,6 +243,20 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_email_unique` (`u_email`);
 
 --
+-- Indexes for table `user_matkul`
+--
+ALTER TABLE `user_matkul`
+  ADD PRIMARY KEY (`user_id`,`matkul_id`),
+  ADD KEY `matkul_user` (`matkul_id`);
+
+--
+-- Indexes for table `user_tugas`
+--
+ALTER TABLE `user_tugas`
+  ADD PRIMARY KEY (`user_id`,`id_tugas`),
+  ADD KEY `tugas_user` (`id_tugas`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -279,13 +298,27 @@ ALTER TABLE `users`
 -- Constraints for table `caras`
 --
 ALTER TABLE `caras`
-  ADD CONSTRAINT `caras_id_tugas_foreign` FOREIGN KEY (`id_tugas`) REFERENCES `tugas` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `caras_id_tugas_foreign` FOREIGN KEY (`id_tugas`) REFERENCES `tugas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `statistiks`
 --
 ALTER TABLE `statistiks`
-  ADD CONSTRAINT `statistiks_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `statistiks_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `user_matkul`
+--
+ALTER TABLE `user_matkul`
+  ADD CONSTRAINT `matkul_user` FOREIGN KEY (`matkul_id`) REFERENCES `mata_kuliahs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `user_matkul` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `user_tugas`
+--
+ALTER TABLE `user_tugas`
+  ADD CONSTRAINT `tugas_user` FOREIGN KEY (`id_tugas`) REFERENCES `tugas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `user_tugas` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 SET FOREIGN_KEY_CHECKS=1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
