@@ -35,9 +35,35 @@
     <div class="container">
       <br><br>
       <h1 class="header center orange-text">KULIAHKU THE GAME</h1>
-      <a href="statistik.php">Statistik saya</a><br>
-      <a href="matakuliah.php">Mata kuliah</a><br>
-      <a href="tugas.php">Tugas</a>
+      <?php
+        if(isset($_SESSION['email'])){
+          include "connect.php";
+          $query = "CALL sp_cara_tugas('$_GET[varname]')";
+          $sql = mysqli_query($db,$query) or die("Query fail : ".mysqli_error());
+          if (mysqli_num_rows($sql)!=0){
+              while ($row = mysqli_fetch_assoc($sql)){
+              if ($row['nama_cara']==1){
+                echo "<p>Nama cara: Baik</p>";
+              }
+              else if ($row['nama_cara']==2){
+                echo "<p>Nama cara: Nyontek</p>";
+              }
+              echo "<p>Knowledge Jumlah: $row[knowledge_juml]</p>";
+              echo "<p>Moral Jumlah: $row[moral_juml]</p>";
+              echo "<p>Completion time:$row[completion_time]</p>";
+              echo "<p>Energi Requirement: $row[energi_req]</p>";
+              echo "<a href=''>Pakai cara</a><br><br>";
+            }
+          }
+          else {
+            echo "<p>Tidak ada tugas</p>";
+          }
+          mysqli_close($db);
+        }
+        
+        ?>
+      <br>
+      <a href="tambahtugas.php">Back</a>
       <br><br>
 
     </div>

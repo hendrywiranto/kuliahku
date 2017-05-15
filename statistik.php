@@ -35,9 +35,27 @@
     <div class="container">
       <br><br>
       <h1 class="header center orange-text">KULIAHKU THE GAME</h1>
-      <a href="statistik.php">Statistik saya</a><br>
-      <a href="matakuliah.php">Mata kuliah</a><br>
-      <a href="tugas.php">Tugas</a>
+      <?php
+        if(isset($_SESSION['email'])){
+          include "connect.php";
+          $query = "CALL sp_user_statistik('$_SESSION[email]')";
+          $sql = mysqli_query($db,$query) or die("Query fail : ".mysqli_error());
+          $row = mysqli_fetch_array($sql);
+          if($row[0]==1){
+             echo "<p>User name: $row[1]</p>";
+             echo "<p>User email: $row[2]</p>";
+             echo "<p>Knowledge: $row[3]</p>";
+             echo "<p>Moral: $row[4]</p>";
+             echo "<p>SKS: $row[5]</p>";
+             echo "<p>Tugas count: $row[6]</p>";
+          }else{
+             echo "<p>$row[1]</p>";
+          }
+          mysqli_close($db);
+        }
+        
+        ?>
+      <a href="index.php">Back</a>
       <br><br>
 
     </div>

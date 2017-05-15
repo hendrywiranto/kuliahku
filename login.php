@@ -175,8 +175,8 @@ footer {
             if($row[0] == 0){
               $_SESSION['email']=$_POST['email'];
               $_SESSION['id']=$row[2];
-                $_SESSION['loggedIn']=true;
-                            echo $row[1];
+              $_SESSION['loggedIn']=true;
+              echo $row[1];
               header("Location: index.php");
             }
             else{
