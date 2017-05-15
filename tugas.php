@@ -35,9 +35,26 @@
     <div class="container">
       <br><br>
       <h1 class="header center orange-text">KULIAHKU THE GAME</h1>
-      <a href="statistik.php">Statistik saya</a><br>
-      <a href="matakuliah.php">Mata kuliah</a><br>
-      <a href="tugas.php">Tugas</a>
+      <a href="tambahtugas.php">Tambah tugas</a>
+      <?php
+        if(isset($_SESSION['email'])){
+          include "connect.php";
+          $query = "CALL sp_tugas_list('$_SESSION[email]')";
+          $sql = mysqli_query($db,$query) or die("Query fail : ".mysqli_error());
+          if (mysqli_num_rows($sql)!=0){
+            while ($row = mysqli_fetch_assoc($sql)){
+              echo "<p>$row[nama_tugas]</p>";
+            }
+          }
+          else {
+            echo "<p>Tidak ada tugas yang diambil</p>";
+          }
+          mysqli_close($db);
+        }
+        
+        ?>
+
+      <a href="index.php">Back</a>
       <br><br>
 
     </div>

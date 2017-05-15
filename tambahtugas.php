@@ -35,9 +35,31 @@
     <div class="container">
       <br><br>
       <h1 class="header center orange-text">KULIAHKU THE GAME</h1>
-      <a href="statistik.php">Statistik saya</a><br>
-      <a href="matakuliah.php">Mata kuliah</a><br>
-      <a href="tugas.php">Tugas</a>
+      <?php
+        function functugas($data){
+          $_SESSION['tambahtugas']=$data;
+          var_dump($_SESSION);
+        }
+
+        if(isset($_SESSION['email'])){
+          include "connect.php";
+          $query = "CALL sp_tugas_available";
+          $sql = mysqli_query($db,$query) or die("Query fail : ".mysqli_error());
+          if (mysqli_num_rows($sql)!=0){
+            while ($row = mysqli_fetch_assoc($sql)){
+              echo "<a href='kerjakantugas.php?varname=$row[nama_tugas]'>";
+              echo "$row[nama_tugas]</a><br>";
+            }
+          }
+          else {
+            echo "<p>Tidak ada tugas</p>";
+          }
+          mysqli_close($db);
+        }
+        
+        ?>
+
+      <a href="tugas.php">Back</a>
       <br><br>
 
     </div>
