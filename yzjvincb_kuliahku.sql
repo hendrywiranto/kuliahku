@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 17, 2017 at 01:13 PM
+-- Generation Time: May 18, 2017 at 08:34 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -101,6 +101,30 @@ CREATE PROCEDURE `sp_matkul_list` (`p_email` VARCHAR(191))  BEGIN
 	ELSE
 		SELECT -1, 'Email tidak terdaftar';
 	END IF;
+    END$$
+
+DROP PROCEDURE IF EXISTS `sp_matkul_requirement`$$
+CREATE PROCEDURE `sp_matkul_requirement` (`p_user_id` INT(10), `p_matkul_id` INT(10))  BEGIN
+	DECLARE tugasSyarat INT(10);
+	DECLARE tugasSelesai INT(10);
+	DECLARE curTugasSelesai CURSOR FOR SELECT id_tugas FROM user_tugas WHERE user_id = p_user_id;
+	DECLARE curTugasSyarat CURSOR FOR SELECT tugas_id FROM matkul_tugas WHERE matkul_id = p_matkul_id;
+		
+	OPEN curTugasSelesai;
+	OPEN curTugasSyarat;
+	
+	read_loop: LOOP
+		FETCH curTugasSelesai INTO tugasSelesai;
+		FETCH curTugasSyarat INTO tugasSyarat;
+		
+		IF NOT EXISTS(SELECT 1 FROM user_tugas WHERE id_tugas = tugasSyarat) then
+			SELECT -2, 'Syarat mata kuliah belum lengkap';
+			LEAVE read_loop;
+		END IF;
+	END LOOP read_loop;
+		
+	CLOSE curTugasSelesai;
+	CLOSE curTugasSyarat;
     END$$
 
 DROP PROCEDURE IF EXISTS `sp_tugas_available`$$
@@ -221,25 +245,6 @@ INSERT INTO `mata_kuliahs` (`id`, `nama_matkul`, `sks_juml`, `knowledge_juml`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `matkul_tugas`
---
-
-DROP TABLE IF EXISTS `matkul_tugas`;
-CREATE TABLE `matkul_tugas` (
-  `matkul_id` int(10) UNSIGNED NOT NULL,
-  `tugas_id` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `matkul_tugas`
---
-
-INSERT INTO `matkul_tugas` (`matkul_id`, `tugas_id`) VALUES
-(1, 1);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `statistiks`
 --
 
@@ -345,19 +350,6 @@ INSERT INTO `user_tugas` (`user_id`, `id_tugas`) VALUES
 (5, 1),
 (5, 2);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `_setting`
---
-
-DROP TABLE IF EXISTS `_setting`;
-CREATE TABLE `_setting` (
-  `EN_v` tinyint(4) DEFAULT NULL,
-  `EN_durasi_in_sec` int(11) DEFAULT NULL,
-  `EN_max` tinyint(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 --
 -- Indexes for dumped tables
 --
@@ -374,13 +366,6 @@ ALTER TABLE `caras`
 --
 ALTER TABLE `mata_kuliahs`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `matkul_tugas`
---
-ALTER TABLE `matkul_tugas`
-  ADD KEY `matkul_id` (`matkul_id`),
-  ADD KEY `tugas_id` (`tugas_id`);
 
 --
 -- Indexes for table `statistiks`
@@ -454,13 +439,6 @@ ALTER TABLE `users`
 --
 ALTER TABLE `caras`
   ADD CONSTRAINT `caras_id_tugas_foreign` FOREIGN KEY (`id_tugas`) REFERENCES `tugas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `matkul_tugas`
---
-ALTER TABLE `matkul_tugas`
-  ADD CONSTRAINT `matkul_tugas_ibfk_1` FOREIGN KEY (`matkul_id`) REFERENCES `mata_kuliahs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `matkul_tugas_ibfk_2` FOREIGN KEY (`tugas_id`) REFERENCES `tugas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `statistiks`
