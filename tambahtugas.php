@@ -19,31 +19,41 @@
   <link href="css/style_index.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
-  <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container">
-      <ul class="right hide-on-med-and-down">
-        <li><a href="logout.php">Logout</a></li>
-      </ul>
+  <?php include 'nav.php'; ?>
 
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="logout.php">Logout</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <br><br>
       <h1 class="header center orange-text">KULIAHKU THE GAME</h1>
+      <div class="row">
       <?php
         if(isset($_SESSION['email'])){
           include "connect.php";
           $query = "CALL sp_tugas_available";
           $sql = mysqli_query($db,$query) or die("Query fail : ".mysqli_error());
-          if (mysqli_num_rows($sql)!=0){
+         if (mysqli_num_rows($sql)!=0){
             while ($row = mysqli_fetch_assoc($sql)){
-              echo "<a href='kerjakantugas.php?tugas=$row[id]'>";
+              /*
+              echo "<a href='kerjakantugas.php?varname=$row[nama_tugas]'>";
               echo "$row[nama_tugas]</a><br>";
+              */
+
+              ?>
+                
+                  <div class="col s4">
+                    <div class="card">
+                      <span class="card-title" style="font-size: 20px; text-align: center;"><?php echo "$row[nama_tugas]</a><br>"; ?></span>
+                      <div class="card-content">
+                      </div>
+
+                      <div class="card-action">
+                        <?php echo "<a href='kerjakantugas.php?tugas=$row[id]'>"; ?>
+                        <?php echo "ambil</a><br>"; ?>
+                      </div>
+                    </div>
+                  </div>
+
+              <?php
             }
           }
           else {
@@ -53,23 +63,13 @@
         }
         
         ?>
+        </div>
       <a href="tugas.php">Back</a>
       <br><br>
 
     </div>
   </div>
-
-
-  
-
-  <footer class="page-footer orange" style="position: relative;margin-top: 228px; /* negative value of footer height */;clear: both;">
-    
-    <div class="footer-copyright">
-      <div class="container">
-      Made by <span class="orange-text text-lighten-3">Kuliahku - MBD E</span> 
-      </div>
-    </div>
-  </footer>
+<?php include 'footer.php'; ?>
 
 
   <!--  Scripts-->

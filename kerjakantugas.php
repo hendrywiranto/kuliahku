@@ -18,18 +18,8 @@
   <link href="css/style_index.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
-  <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container">
-      <ul class="right hide-on-med-and-down">
-        <li><a href="logout.php">Logout</a></li>
-      </ul>
+   <?php include 'nav.php'; ?>
 
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="logout.php">Logout</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <br><br>
@@ -43,6 +33,7 @@
           $sql = mysqli_query($db,$query) or die("Query fail : ".mysqli_error());
           if (mysqli_num_rows($sql)!=0){
               while ($row = mysqli_fetch_assoc($sql)){
+              /*
               echo "$row[nama_tugas]";
               echo "<p>Nama cara: $row[nama_cara]</p>";
               echo "<p>Knowledge Jumlah: $row[knowledge_juml]</p>";
@@ -50,6 +41,31 @@
               echo "<p>Completion time:$row[completion_time]</p>";
               echo "<p>Energi Requirement: $row[energi_req]</p>";
               echo "<a href='kerja.php?tugas=$row[id]&cara=$row[id_nama_cara]'>Pakai cara</a><br><br>";
+              */
+              ?>
+                <div class="col s12 m7">
+                <div class="card horizontal">
+                  <div class="card-stacked">
+                    <div class="card-content">
+                      <?php
+                          echo "$row[nama_tugas]";
+                          echo "<p>Nama cara: $row[nama_cara]</p>";
+                          echo "<p>Knowledge Jumlah: $row[knowledge_juml]</p>";
+                          echo "<p>Moral Jumlah: $row[moral_juml]</p>";
+                          echo "<p>Completion time:$row[completion_time]</p>";
+                          echo "<p>Energi Requirement: $row[energi_req]</p>";
+                          
+                          
+                      ?>
+                    </div>
+                    <div class="card-action"><?php
+                      echo "<a href='kerja.php?tugas=$row[id]&cara=$row[id_nama_cara]'>Pakai cara</a><br><br>";
+                      ?>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <?php
             }
           }
           else {
@@ -65,18 +81,8 @@
 
     </div>
   </div>
+    <?php include 'footer.php'; ?>
 
-
-  
-
-  <footer class="page-footer orange" style="position: relative;margin-top: 228px; /* negative value of footer height */;clear: both;">
-    
-    <div class="footer-copyright">
-      <div class="container">
-      Made by <span class="orange-text text-lighten-3">Kuliahku - MBD E</span> 
-      </div>
-    </div>
-  </footer>
 
 
   <!--  Scripts-->

@@ -19,18 +19,7 @@
   <link href="css/style_index.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
-  <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container">
-      <ul class="right hide-on-med-and-down">
-        <li><a href="logout.php">Logout</a></li>
-      </ul>
-
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="logout.php">Logout</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
+  <?php include 'nav.php'; ?>
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <br><br>
@@ -65,14 +54,7 @@
 
   
 
-  <footer class="page-footer orange" style="position: relative;margin-top: 228px; /* negative value of footer height */;clear: both;">
-    
-    <div class="footer-copyright">
-      <div class="container">
-      Made by <span class="orange-text text-lighten-3">Kuliahku - MBD E</span> 
-      </div>
-    </div>
-  </footer>
+  <?php include 'footer.php'; ?>
 
 
   <!--  Scripts-->
