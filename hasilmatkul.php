@@ -4,8 +4,7 @@
     header("Location: login.php");
     die;
   }
-  ?>
-
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,25 +34,19 @@
     <div class="container">
       <br><br>
       <h1 class="header center orange-text">KULIAHKU THE GAME</h1>
-      <?php
-        if(isset($_SESSION['email'])){
+      <?php 
           include "connect.php";
-          $query = "CALL sp_tugas_available";
+          $query = "CALL sp_matkul_requirement('$_SESSION[id]','$_GET[matkul]');";
           $sql = mysqli_query($db,$query) or die("Query fail : ".mysqli_error());
-          if (mysqli_num_rows($sql)!=0){
-            while ($row = mysqli_fetch_assoc($sql)){
-              echo "<a href='kerjakantugas.php?tugas=$row[id]'>";
-              echo "$row[nama_tugas]</a><br>";
-            }
-          }
-          else {
-            echo "<p>Tidak ada tugas</p>";
-          }
+          $row = mysqli_fetch_array($sql);
+          
+          echo "$row[1]<br>"; 
+          #var_dump($row);
           mysqli_close($db);
-        }
         
-        ?>
-      <a href="tugas.php">Back</a>
+      ?>
+      <br>
+      <a href="ambilmatkul.php">Back</a>
       <br><br>
 
     </div>

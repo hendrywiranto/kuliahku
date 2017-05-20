@@ -38,12 +38,12 @@
       <?php
         if(isset($_SESSION['email'])){
           include "connect.php";
-          $query = "CALL sp_tugas_available";
+          $query = "CALL sp_matkul_available";
           $sql = mysqli_query($db,$query) or die("Query fail : ".mysqli_error());
           if (mysqli_num_rows($sql)!=0){
             while ($row = mysqli_fetch_assoc($sql)){
-              echo "<a href='kerjakantugas.php?tugas=$row[id]'>";
-              echo "$row[nama_tugas]</a><br>";
+              echo "<a href='hasilmatkul.php?matkul=$row[id]'>";
+              echo "$row[nama_matkul]</a><br>";
             }
           }
           else {
@@ -53,7 +53,7 @@
         }
         
         ?>
-      <a href="tugas.php">Back</a>
+      <a href="matakuliah.php">Back</a>
       <br><br>
 
     </div>

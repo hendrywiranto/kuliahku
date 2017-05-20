@@ -19,8 +19,18 @@
   <link href="css/style_index.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
-  <?php include 'nav.php'; ?>
-  
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+      <ul class="right hide-on-med-and-down">
+        <li><a href="logout.php">Logout</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="logout.php">Logout</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <br><br>
@@ -37,7 +47,8 @@
              echo "<p>Knowledge: $row[3]</p>";
              echo "<p>Moral: $row[4]</p>";
              echo "<p>SKS: $row[5]</p>";
-             echo "<p>Tugas count: $row[6]</p>";
+             echo "<p>Tugas jujur count: $row[6]</p>";
+             echo "<p>Tugas nyontek count: $row[7]</p>";
           }else{
              echo "<p>$row[1]</p>";
           }
@@ -54,7 +65,15 @@
 
   
 
-  <?php include 'footer.php'; ?>
+  <footer class="page-footer orange" style="position: relative;margin-top: 228px; /* negative value of footer height */;clear: both;">
+    
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <span class="orange-text text-lighten-3">Kuliahku - MBD E</span> 
+      </div>
+    </div>
+  </footer>
+
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
