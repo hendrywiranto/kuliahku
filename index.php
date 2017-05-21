@@ -30,7 +30,7 @@
 	      <div class="col s4">
 	      	<a href="matakuliah.php" class=" waves-effect waves-light btn-large">Mata kuliah</a>
 	      	<br><br><br><br><br><br>
-	      	<a href="#" class=" waves-effect waves-light btn-large">Leaderboard</a>
+	      	<a href="leaderboardknowledge.php" class=" waves-effect waves-light btn-large">Leaderboard</a>
 	      </div>
 	      <div class="col s4"><a href="tugas.php" class=" waves-effect waves-light btn-large">Tugas</a></div>
 	      

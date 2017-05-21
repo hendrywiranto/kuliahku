@@ -47,7 +47,7 @@
         <div class="col s4">
           <div class="card medium">
             <div class="card-image">
-              <img src="http://img.providr.com/all-images/mia-khalifa-photos-again1.jpg">
+              <img src="https://scontent-sit4-1.xx.fbcdn.net/v/t1.0-9/1908112_10200785083425804_2573951972651245438_n.jpg?oh=80874f43119170ec306a7c87165499af&oe=59C1F5D8">
               <span class="card-title">Hendry Wiranto <small>- Database Developer</small></span>
             </div>
             <div class="card-content">
