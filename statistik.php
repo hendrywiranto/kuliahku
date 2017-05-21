@@ -24,6 +24,7 @@
     <div class="container">
       <br><br>
       <h1 class="header center orange-text">KULIAHKU THE GAME</h1>
+      <?php include 'stats_nav.php' ?>
       <?php
         if(isset($_SESSION['email'])){
           include "connect.php";
@@ -31,13 +32,49 @@
           $sql = mysqli_query($db,$query) or die("Query fail : ".mysqli_error());
           $row = mysqli_fetch_array($sql);
           if($row[0]==1){
-             echo "<p>User name: $row[1]</p>";
-             echo "<p>User email: $row[2]</p>";
-             echo "<p>Knowledge: $row[3]</p>";
-             echo "<p>Moral: $row[4]</p>";
-             echo "<p>SKS: $row[5]</p>";
-             echo "<p>Tugas jujur count: $row[6]</p>";
-             echo "<p>Tugas nyontek count: $row[7]</p>";
+
+            ?>
+              <table class="highlight centered">
+                <thead>
+                  <tr>
+                      <th>Attributes</th>
+                      <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody style="text-align: center">
+                    <tr>
+                      <td>Username</td>
+                      <td><?php echo "$row[1]"; ?></td>
+                    </tr>
+                    <tr>
+                      <td>Email</td>
+                      <td><?php echo "$row[2]"; ?></td>
+                    </tr>
+                    <tr>
+                      <td>Knowledge</td>
+                      <td><?php echo "$row[3]"; ?></td>
+                    </tr>
+                    <tr>
+                      <td>Moral</td>
+                      <td><?php echo "$row[4]"; ?></td>
+                    </tr>
+                    <tr>
+                      <td>SKS</td>
+                      <td><?php echo "$row[5]"; ?></td>
+                    </tr>
+                    <tr>
+                      <td>Cara Jujur</td>
+                      <td><?php echo "$row[6]"; ?></td>
+                    </tr>
+                    <tr>
+                      <td>Cara Nyontek</td>
+                      <td><?php echo "$row[7]"; ?></td>
+                    </tr>
+                </tbody>
+              </table>
+            <?php
+
+             
           }else{
              echo "<p>$row[1]</p>";
           }
@@ -45,14 +82,10 @@
         }
         
         ?>
-      <a href="index.php">Back</a>
-      <br><br>
-
+      
+      <?php include 'back_button.php' ?>
     </div>
   </div>
-
-
-  
 
   <?php include 'footer.php'; ?>
 

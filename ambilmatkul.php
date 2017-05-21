@@ -42,8 +42,8 @@
         }
         
         ?>
-      <a href="matakuliah.php">Back</a>
-      <br><br>
+      <?php include 'back_button.php' ?>
+
 
     </div>
   </div>

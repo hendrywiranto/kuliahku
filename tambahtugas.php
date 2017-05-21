@@ -64,8 +64,7 @@
         
         ?>
         </div>
-      <a href="tugas.php">Back</a>
-      <br><br>
+<?php include 'back_button.php' ?>
 
     </div>
   </div>

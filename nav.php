@@ -1,5 +1,6 @@
 <nav class="light-blue lighten-1" role="navigation">
     <div class="nav-wrapper container">
+      <a href="index.php" class="brand-logo">Kuliahku</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="statistik.php"><?php echo $_SESSION['email'] ?></a></li>
         <li><a href="logout.php">Logout</a></li>

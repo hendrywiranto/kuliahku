@@ -25,6 +25,7 @@
     <div class="container">
       <br><br>
       <h1 class="header center orange-text">KULIAHKU THE GAME</h1>
+      <?php include 'stats_nav.php' ?>
       <a href="tambahtugas.php">Tambah tugas</a>
       <?php
         if(isset($_SESSION['email'])){
@@ -44,9 +45,7 @@
         }
         
         ?>
-
-      <a href="index.php">Back</a>
-      <br><br>
+      <?php include 'back_button.php' ?>
 
     </div>
   </div>

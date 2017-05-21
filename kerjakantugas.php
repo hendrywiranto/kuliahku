@@ -75,9 +75,7 @@
         }
         
         ?>
-      <br>
-      <a href="tambahtugas.php">Back</a>
-      <br><br>
+<?php include 'back_button.php' ?>  
 
     </div>
   </div>
