@@ -40,7 +40,7 @@
               <p>rogojagadalit@gmail.com</p><br>
             </div>
             <div class="card-action">
-              <a href="#" target="blank">Visit</a>
+              <a href="https://www.facebook.com/aryarinoo" target="blank">Visit</a>
             </div>
           </div>
         </div>
@@ -51,11 +51,11 @@
               <span class="card-title">Hendry Wiranto <small>- Database Developer</small></span>
             </div>
             <div class="card-content">
-              <p>5115100168</p><br>
-              <p>rogojagadalit@gmail.com</p><br>
+              <p>5115100102</p><br>
+              <p>hendrywiranto24@gmail.com</p><br>
             </div>
             <div class="card-action">
-              <a href="#">Visit</a>
+              <a href="https://www.facebook.com/hendry.wiranto"  target="blank">Visit</a>
             </div>
           </div>
         </div>
@@ -70,7 +70,7 @@
               <p>rogojagadalit@gmail.com</p><br>
             </div>
             <div class="card-action">
-              <a href="#">Visit</a>
+              <a href="https://www.facebook.com/rogo.alit" target="blank">Visit</a>
             </div>
           </div>
         </div>
