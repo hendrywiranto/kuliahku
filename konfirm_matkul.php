@@ -27,23 +27,31 @@
       <?php
         if(isset($_SESSION['email'])){
           include "connect.php";
-          $query = "CALL sp_matkul_available";
+          
+          echo "Tugas persyaratan :";
+          $query = "CALL sp_matkul_konfirm('$_GET[matkul]')";
           $sql = mysqli_query($db,$query) or die("Query fail : ".mysqli_error());
+          ?><ul class="collection"><?php
           if (mysqli_num_rows($sql)!=0){
             while ($row = mysqli_fetch_assoc($sql)){
-              echo "<a href='konfirm_matkul.php?matkul=$row[id]'>";
-              echo "$row[nama_matkul]</a><br>";
+              ?>
+                  <li class="collection-item"><?php echo $row['nama_tugas'] ?></li>
+              <?php
             }
           }
           else {
-            echo "<p>Tidak ada tugas</p>";
+            echo "<p>Tidak ada syarat</p>";
           }
           mysqli_close($db);
         }
         
         ?>
+        </ul>
+        <br><br>
       <?php include 'back_button.php' ?>
-
+      <a class="btn waves-effect waves-light" href=<?php echo "hasilmatkul.php?matkul=$_GET[matkul]" ?>>
+         Ambil
+      </a>
 
     </div>
   </div>
