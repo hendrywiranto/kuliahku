@@ -44,7 +44,8 @@
         
       ?>
       <br>
-      <a href="kerjakantugas.php?tugas=<?php echo "$_GET[tugas]";?>">Back</a>
+      <!--<a href="kerjakantugas.php?tugas=<?php// echo "$_GET[tugas]";?>">Back</a>-->
+      <?php include 'back_button.php';?>
       <br><br>
 
     </div>

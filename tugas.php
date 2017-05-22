@@ -34,9 +34,14 @@
           $sql = mysqli_query($db,$query) or die("Query fail : ".mysqli_error());
           #echo $_SESSION['email'];
           if (mysqli_num_rows($sql)!=0){
-            while ($row = mysqli_fetch_assoc($sql)){
-              echo "<p>$row[nama_tugas]</p>";
-            }
+            ?>
+              <ul class="collection">
+                <?php
+                while ($row = mysqli_fetch_assoc($sql)){
+                 // echo "<p>$row[nama_tugas]</p>";
+                  ?><li class="collection-item"><?php echo "<p>$row[nama_tugas]</p>"; ?></li><?php
+                }
+            ?></ul><?php
           }
           else {
             echo "<p>Tidak ada tugas sudah yang diambil</p>";

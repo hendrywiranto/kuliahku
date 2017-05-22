@@ -44,6 +44,7 @@
 			$row = mysqli_fetch_array($sql);
 
 			if($row[0]==0){
+				
 				echo "<p>$row[1] anda sudah bisa login</p>";
 				echo "<a href='login.php'>Login</a>";
 			}else{

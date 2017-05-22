@@ -32,9 +32,14 @@
           $query = "CALL sp_matkul_list('$_SESSION[email]')";
           $sql = mysqli_query($db,$query) or die("Query fail : ".mysqli_error());
           if (mysqli_num_rows($sql)!=0){
-            while ($row = mysqli_fetch_assoc($sql)){
-              echo "<p>$row[nama_matkul]</p>";
-            }
+            ?>
+              <ul class="collection">
+                <?php
+                while ($row = mysqli_fetch_assoc($sql)){
+                 // echo "<p>$row[nama_tugas]</p>";
+                  ?><li class="collection-item"><?php echo "<p>$row[nama_matkul]</p>"; ?></li><?php
+                }
+            ?></ul><?php
           }
           else {
             echo "<p>Tidak ada mata kuliah yang sudah diambil</p>";

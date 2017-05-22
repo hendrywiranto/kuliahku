@@ -32,16 +32,39 @@
           $query = "CALL sp_leaderboard_knowledge";
           $sql = mysqli_query($db,$query) or die("Query fail : ".mysqli_error());
           if (mysqli_num_rows($sql)!=0){
-            while ($row = mysqli_fetch_assoc($sql)){
-              echo "Username:$row[u_name]<br>";
-              echo "Knowledge:$row[knowledge_stat]<br>";
-              echo "Moral:$row[moral_stat]<br>";
-              echo "SKS:$row[sks_stat]<br>";
-              echo "Tugas baik:$row[tugas_baik_count]<br>";
-              echo "Tugas buruk:$row[tugas_buruk_count]<br>";
-              $total=$row["tugas_baik_count"]+$row["tugas_buruk_count"];
-              echo "Tugas total:$total<br><br>";
-            }
+            ?>
+              <table class="centered striped">
+                <thead>
+                  <tr>
+                      <th>Username</th>
+                      <th>Knowledge Level</th>
+                      <th>Moral</th>
+                      <th>SKS</th>
+                      <th>Tugas Dikerjakan</th>
+                      <th>Cara Baik</th>
+                      <th>Cara Jelek</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <?php while ($row = mysqli_fetch_assoc($sql)){
+                        $total=$row["tugas_baik_count"]+$row["tugas_buruk_count"];
+                      ?>
+                        <tr>
+                          <td><?php echo "$row[u_name]<br>";?></td>
+                          <td><?php echo "$row[knowledge_stat]<br>";?></td>
+                          <td><?php echo "$row[moral_stat]<br>";?></td>
+                          <td><?php echo "$row[sks_stat]<br>";?></td>
+                          <td><?php echo "$total";?></td>
+                          <td><?php echo "$row[tugas_baik_count]<br>";?></td>
+                          <td><?php echo "$row[tugas_buruk_count]<br>";?></td>
+                        </tr>
+                      <?php
+                    }
+                  ?>
+                </tbody>
+              </table>
+            <?php
           }
           else {
             echo "<p>Tidak ada user yang terdaftar</p>";
@@ -50,9 +73,8 @@
         }
         
         ?>
-
-      <a href="index.php">Back</a>
-      <br><br>
+        <br>
+      <?php include 'back_button.php';?>
 
     </div>
   </div>
