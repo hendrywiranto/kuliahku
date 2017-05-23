@@ -31,13 +31,13 @@
     <div class="row">
         <div class="col s4">
           <div class="card medium">
-            <div class="card-image">
-              <img src="http://img.providr.com/all-images/mia-khalifa-photos-again1.jpg">
+            <div class="card-image" style=" position: relative;">
+              <img src="https://scontent-sin6-1.xx.fbcdn.net/v/t1.0-9/14265089_1179936545362421_5780189738549283698_n.jpg?oh=164152ced7a98065dd4d8730143d0ba5&oe=59A1D21E" style="top: -160px; bottom: 145">
               <span class="card-title" style="background-color: rgba(204, 204, 204, 0.3);">Arya Wiranata <small>- UI Designer</small></span>
             </div>
             <div class="card-content">
               <p>5115100163</p><br>
-              <p>rogojagadalit@gmail.com</p><br>
+              <p>wiranata.arya.wiranata@gmail.com</p><br>
             </div>
             <div class="card-action">
               <a href="https://www.facebook.com/aryarinoo" target="blank">Visit</a>
