@@ -29,6 +29,21 @@
     <?php include 'stats_nav.php' ?>
     <br>
     <div class="row">
+      <div class="col s4">
+        <div class="card medium">
+          <div class="card-image">
+            <img src="https://scontent-sit4-1.xx.fbcdn.net/v/t1.0-9/1908112_10200785083425804_2573951972651245438_n.jpg?oh=80874f43119170ec306a7c87165499af&oe=59C1F5D8">
+            <span class="card-title" style="background-color: rgba(204, 204, 204, 0.3);">Hendry Wiranto <small>- Database Developer</small></span>
+          </div>
+          <div class="card-content">
+            <p>5115100102</p><br>
+            <p>hendrywiranto24@gmail.com</p><br>
+          </div>
+          <div class="card-action">
+            <a href="https://www.facebook.com/hendry.wiranto"  target="blank">Visit</a>
+          </div>
+        </div>
+      </div>
         <div class="col s4">
           <div class="card medium">
             <div class="card-image" style=" position: relative;">
@@ -41,21 +56,6 @@
             </div>
             <div class="card-action">
               <a href="https://www.facebook.com/aryarinoo" target="blank">Visit</a>
-            </div>
-          </div>
-        </div>
-        <div class="col s4">
-          <div class="card medium">
-            <div class="card-image">
-              <img src="https://scontent-sit4-1.xx.fbcdn.net/v/t1.0-9/1908112_10200785083425804_2573951972651245438_n.jpg?oh=80874f43119170ec306a7c87165499af&oe=59C1F5D8">
-              <span class="card-title" style="background-color: rgba(204, 204, 204, 0.3);">Hendry Wiranto <small>- Database Developer</small></span>
-            </div>
-            <div class="card-content">
-              <p>5115100102</p><br>
-              <p>hendrywiranto24@gmail.com</p><br>
-            </div>
-            <div class="card-action">
-              <a href="https://www.facebook.com/hendry.wiranto"  target="blank">Visit</a>
             </div>
           </div>
         </div>
