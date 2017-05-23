@@ -12,8 +12,10 @@
   <meta charset="UTF-8">
   <title>Login</title>
 
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
   <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto+Slab'>
+
   <style>
       /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
     a{
@@ -32,8 +34,9 @@
 
   html, body {
   height: 100%;
+  margin: 0;
   background-color: #34495e;
-  font-family: "Roboto Slab", serif;
+  font-family: "Roboto Slab", sans-serif;
   color: white;
 }
 
@@ -108,7 +111,7 @@ small {
 }
 .login--toggle-container .js-toggle-login {
   font-size: 4em;
-  text-decoration: underline;
+  text-decoration: none;
 }
 .login--active .login--toggle-container {
   transform: perspective(1000px) rotateY(180deg);
@@ -147,8 +150,10 @@ footer {
 
 </head>
 
-<body>
+<body style="margin-top: -3%; padding: 0">
+
   <div class='preload login--container'>
+    <h1 style="font-size: 94px; text-align: center; font-family: 'Poppins', sans-serif;">Kuliahku</h1>
   <form method="POST" action="">
     <div class='login--form'>
       <div class='login--username-container'>
@@ -190,7 +195,7 @@ footer {
     ?>
     <div class='login--toggle-container'>
       <!-- <small>Hey you,</small> --><br>
-      <div class='js-toggle-login'>Login</div>
+      <div class='js-toggle-login'><h2>Login</h2></div>
       <!-- <small>already</small> --><br>
     </div>
   </div>
