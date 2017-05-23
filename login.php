@@ -11,8 +11,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Login</title>
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
   <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto+Slab'>
   <style>
       /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
@@ -56,7 +56,7 @@ input[type="text"], input[type="password"] {
   padding: 0.5em;
   border-radius: 2px;
   margin-bottom: 0.5em;
-  color: #333;
+  color: #16a085;
 }
 input[type="text"]:focus, input[type="password"]:focus {
   outline: none;
@@ -152,15 +152,13 @@ footer {
   <form method="POST" action="">
     <div class='login--form'>
       <div class='login--username-container'>
-        <label>Email</label>
         <input autofocus id="email" name="email" placeholder="Email" type='text'>
         <small>Belum punya akun? <a href="register.php">Daftar disini</a></small>
       </div>
-      
+
       <div class='login--password-container'>
-        <label>Password</label>
         <input placeholder='Password' id="password" name="password" type='password'>
-        <input class='js-toggle-login login--login-submit' type="submit" name="submit" id="submit" value="Login">
+        <input class='btn waves-light js-toggle-login login--login-submit' type="submit" name="submit" id="submit" value="Login">
       </div>
     </div>
     </form>
@@ -186,17 +184,18 @@ footer {
                 </script>
               <?php
             }
-            echo $row[1]; 
+            echo $row[1];
             mysqli_close($db);
       }
     ?>
     <div class='login--toggle-container'>
-      <small>Hey you,</small>
+      <!-- <small>Hey you,</small> --><br>
       <div class='js-toggle-login'>Login</div>
-      <small>already</small>
+      <!-- <small>already</small> --><br>
     </div>
   </div>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 <script src="js/index.js"></script>
 
 </body>
