@@ -24,15 +24,17 @@
     <div class="container">
       <br><br>
       <h1 class="header center orange-text">KULIAHKU THE GAME</h1>
-      <?php include 'stats_nav.php' ?>
       <?php 
           include "connect.php";
           $query = "CALL sp_tambah_tugas('$_SESSION[id]','$_GET[tugas]','$_GET[cara]');";
           $sql = mysqli_query($db,$query) or die("Query fail : ".mysqli_error());
           $row = mysqli_fetch_array($sql);
+          mysqli_close($db);
+
+          include 'stats_nav.php';
+
           if ($row[0]==-100){
             echo "$row[1]<br>"; 
-            echo "Energi: $row[energi]<br>";
           }
           else {
             echo "Energi: $row[energi_s0]<br>";
@@ -40,7 +42,6 @@
             echo "Tugas buruk: $row[tugas_buruk_count]<br>";
           }
           #var_dump($row);
-          mysqli_close($db);
         
       ?>
       <br>

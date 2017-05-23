@@ -29,15 +29,15 @@
       <?php
         if(isset($_SESSION['email'])){
           include "connect.php";
-          $query = "CALL sp_leaderboard_knowledge";
+          $query = "CALL sp_leaderboard_sks";
           $sql = mysqli_query($db,$query) or die("Query fail : ".mysqli_error());
           if (mysqli_num_rows($sql)!=0){
             ?>
     <div class="row" style="text-align: center">
       <div class="col s6">
-        <div id="date" class="col s4">Knowledge</div>
+        <div id="date" class="col s4"><a href="leaderboardknowledge.php">Knowledge</a></div>
         <div id="date" class="col s4"><a href="leaderboardmoral.php">Moral</a></div>
-        <div id="date" class="col s4"><a href="leaderboardsks.php">SKS</a></div>
+        <div id="date" class="col s4">SKS</div>
       </div>
     </div>
               <table class="centered striped">

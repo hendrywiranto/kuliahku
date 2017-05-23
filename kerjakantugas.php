@@ -54,12 +54,15 @@
                           echo "<p>Moral Jumlah: $row[moral_juml]</p>";
                           echo "<p>Completion time:$row[completion_time]</p>";
                           echo "<p>Energi Requirement: $row[energi_req]</p>";
-                          
-                          
                       ?>
                     </div>
                     <div class="card-action"><?php
-                      echo "<a href='kerja.php?tugas=$row[id]&cara=$row[id_nama_cara]'>Pakai cara</a><br><br>";
+                        if ($row['id_nama_cara']=='1'){
+                          echo "<a href='kerja.php?tugas=$row[id]&cara=$row[id_nama_cara]'>Pakai cara</a><br><br>";
+                        }
+                        else {
+                          echo "<a href='contektugas.php?tugas=$row[id]'>Pakai cara</a><br><br>";
+                        }
                       ?>
                     </div>
                   </div>

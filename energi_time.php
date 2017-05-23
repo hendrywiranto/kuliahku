@@ -3,9 +3,8 @@
           include "connect.php";
           $query = "SELECT fn_EN(energi_s0,energi_t0) AS energi FROM statistiks WHERE user_id='$_SESSION[id]';";
           $sql = mysqli_query($db, $query) or die("Query fail : ".mysqli_error($db));
-          $row = mysqli_fetch_assoc($sql);
-          #var_dump($row);
-          echo "$row[energi]";
+          $stats = mysqli_fetch_assoc($sql);
+          echo "$stats[energi]";
           mysqli_close($db);
         ?>;
     var myTime = setInterval(myDate, 1000);
