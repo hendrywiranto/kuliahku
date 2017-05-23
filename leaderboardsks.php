@@ -11,7 +11,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>COMING SOON</title>
+  <title>Kuliahku</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -33,13 +33,7 @@
           $sql = mysqli_query($db,$query) or die("Query fail : ".mysqli_error());
           if (mysqli_num_rows($sql)!=0){
             ?>
-    <div class="row" style="text-align: center">
-      <div class="col s6">
-        <div id="date" class="col s4"><a href="leaderboardknowledge.php">Knowledge</a></div>
-        <div id="date" class="col s4"><a href="leaderboardmoral.php">Moral</a></div>
-        <div id="date" class="col s4">SKS</div>
-      </div>
-    </div>
+   <?php include 'leadby.php'; ?>
               <table class="centered striped">
                 <thead>
                   <tr>

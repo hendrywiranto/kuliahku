@@ -11,7 +11,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>COMING SOON</title>
+  <title>Kuliahku</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -25,7 +25,9 @@
       <br><br>
       <h1 class="header center orange-text">KULIAHKU THE GAME</h1>
       <?php include 'stats_nav.php' ?>
-      <a href="ambilmatkul.php">Tambah mata kuliah</a>
+      <a class="btn waves-effect waves-light" href="ambilmatkul.php">
+        Ambil mata kuliah <i class="material-icons right">input</i>
+      </a>
       <?php
         if(isset($_SESSION['email'])){
           include "connect.php";
