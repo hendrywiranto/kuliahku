@@ -45,12 +45,9 @@
 			$sql = mysqli_query($db,$query) or die("Query fail : ".mysqli_error());
 
 			$row = mysqli_fetch_array($sql);
-
+			
 			if($row[0]==0){
-				$_SESSION['email']=$_POST['email'];
-				$_SESSION['id']=$row[2];
-				$_SESSION['loggedIn']=true;
-				header("Location: index.php");
+				?><h2 style='font-size: 24px'>Anda sudah bisa <a href="login.php">Login</a></h2><?php
 			}else{
 				echo "<br><h2 style='font-size: 24px'>$row[1]</h2>";
 			}
