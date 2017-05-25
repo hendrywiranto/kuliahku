@@ -43,7 +43,7 @@
                   <div class="col s12 m6">
                     <div class="card">
                       <div class="card-image">
-                        <img src="https://cdn.pixabay.com/photo/2017/01/07/14/59/texture-1960620_960_720.jpg">
+                        <?php echo'<img width="50" height="300" alt="" src="data:image/jpeg;base64,'.base64_encode($row['img']).'">';?>
                         <span class="card-title"><?php echo $row['nama_matkul']; ?></span>
                         <a class="btn-floating halfway-fab waves-effect waves-light red" href=<?php echo "#modal$row[id]"; ?>><i class="material-icons">add</i></a>
                       </div>
