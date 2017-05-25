@@ -11,7 +11,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Kuliahku</title>
+  <title>Ambil Mata Kuliah</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -35,14 +35,31 @@
           $sql = mysqli_query($db,$query) or die("Query fail : ".mysqli_error());
           if (mysqli_num_rows($sql)!=0){
             $i=0; $save;
+            ?>
+              <div class="row">
+            <?php
             while ($row = mysqli_fetch_assoc($sql)){
-              //echo "<a href='konfirm_matkul.php?matkul=$row[id]'>";
-              //echo "$row[nama_matkul]</a><br>";
-
-              echo "<a href='#modal$row[id]' class=''>$row[nama_matkul]</a><br>";
+              ?>
+                  <div class="col s12 m6">
+                    <div class="card">
+                      <div class="card-image">
+                        <img src="https://cdn.pixabay.com/photo/2017/01/07/14/59/texture-1960620_960_720.jpg">
+                        <span class="card-title"><?php echo $row['nama_matkul']; ?></span>
+                        <a class="btn-floating halfway-fab waves-effect waves-light red" href=<?php echo "#modal$row[id]"; ?>><i class="material-icons">add</i></a>
+                      </div>
+                      <div class="card-content">
+                        <p><?php echo $row['deskripsi'];?></p>
+                      </div>
+                    </div>
+                  </div>
+              <?php
+              //echo "<a href='#modal$row[id]' class=''>$row[nama_matkul]</a><br>";
               $save[] = $row['id']; 
               $i++; 
               }
+              ?>
+              </div>
+              <?php
             }
           }
           else {

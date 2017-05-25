@@ -10,7 +10,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>COMING SOON</title>
+  <title>Pilih Cara</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -48,11 +48,11 @@
                   <div class="card-stacked">
                     <div class="card-content">
                       <?php
-                          echo "$row[nama_tugas]";
-                          echo "<p>Nama cara: $row[nama_cara]</p>";
-                          echo "<p>Knowledge Jumlah: $row[knowledge_juml]</p>";
-                          echo "<p>Moral Jumlah: $row[moral_juml]</p>";
-                          echo "<p>Completion time:$row[completion_time]</p>";
+                          //echo "$row[nama_tugas]<br>";
+                          echo "<strong><p>Cara $row[nama_cara]</p></strong>";
+                          echo "<p>Knowledge: $row[knowledge_juml]</p>";
+                          echo "<p>Moral: $row[moral_juml]</p>";
+                          //echo "<p>Completion time:$row[completion_time]</p>";
                           echo "<p>Energi Requirement: $row[energi_req]</p>";
                       ?>
                     </div>
