@@ -89,7 +89,7 @@
                     </div>
                         <div class="modal-footer">
                             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Belum
-                            <a href=<?php echo "hasilmatkul.php?matkul=$save[$i]" ?> class="modal-action modal-close waves-effect waves-green btn-flat">Ya
+                            <a href=<?php echo "hasilmatkul.php?matkul=$save[$i]" ?> class="modal-action modal-close waves-effect waves-green btn-flat">Sudah
                             </a>
                         </div>
                     </div>
