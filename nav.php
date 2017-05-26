@@ -20,4 +20,3 @@
     </div>
   </ul>
 </div>
-<main>
