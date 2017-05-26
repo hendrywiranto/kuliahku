@@ -48,16 +48,15 @@
           }
           mysqli_close($db);
         }
-        
+
         ?>
       <?php include 'back_button.php' ?>
 
 
     </div>
   </div>
-
+<?php include 'nav.php'; ?>
 <?php include 'footer.php'; ?>
-
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>

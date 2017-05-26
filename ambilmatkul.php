@@ -49,6 +49,7 @@
                       </div>
                       <div class="card-content">
                         <p><?php echo $row['deskripsi'];?></p>
+                        <p><?php echo "Knowledge: $row[knowledge_juml]";?></p>
                       </div>
                     </div>
                   </div>
