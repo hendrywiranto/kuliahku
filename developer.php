@@ -46,7 +46,7 @@
         <div class="col s4">
           <div class="card medium">
             <div class="card-image" style=" position: relative;">
-              <img src="https://scontent-sin6-1.xx.fbcdn.net/v/t1.0-9/14265089_1179936545362421_5780189738549283698_n.jpg?oh=164152ced7a98065dd4d8730143d0ba5&oe=59A1D21E" style="top: -160px; bottom: 145">
+              <img src="https://scontent-sin6-1.xx.fbcdn.net/v/t1.0-9/14265089_1179936545362421_5780189738549283698_n.jpg?oh=164152ced7a98065dd4d8730143d0ba5&oe=59A1D21E" style="top:-100px;">
               <span class="card-title" style="color: white; background-color: rgba(44, 62, 80,0.5); width: 100%;">Arya Wiranata <small>- UI Designer</small></span>
             </div>
             <div class="card-content">
