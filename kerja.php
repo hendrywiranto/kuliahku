@@ -18,7 +18,7 @@
   <link href="css/style_index.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
-
+<?php include 'nav.php'; ?>
 
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
@@ -45,7 +45,6 @@
 
       ?>
       <br>
-      <?php include 'nav.php'; ?>
       <!--<a href="kerjakantugas.php?tugas=<?php// echo "$_GET[tugas]";?>">Back</a>-->
       <?php include 'back_button.php';?>
       <br><br>
