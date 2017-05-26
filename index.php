@@ -49,7 +49,7 @@
           </tr>
           <tr>
             <td><h4 class="vertical">COST-Y<br><br><br></h4></td>
-            <td>Mau kerjakan sendiri? Pastikan punya energi</td>
+            <td>Mau kerjakan sendiri? Pastikan punya energi. Energi bertambah 1 setiap 20 detik</td>
           </tr>
           <tr>
             <td><h4 class="vertical">KING OF THE WORLD</h4></td>
