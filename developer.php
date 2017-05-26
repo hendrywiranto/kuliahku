@@ -31,7 +31,7 @@
       <div class="col s4">
         <div class="card medium">
           <div class="card-image">
-            <img src="https://scontent-sit4-1.xx.fbcdn.net/v/t1.0-9/1908112_10200785083425804_2573951972651245438_n.jpg?oh=80874f43119170ec306a7c87165499af&oe=59C1F5D8">
+            <img src="https://scontent-sin6-1.xx.fbcdn.net/v/t1.0-9/1010264_573277219362227_1037195923_n.jpg?oh=73bc88b01e55ed789c3bf55b6103b14f&oe=59BCD5B5">
             <span class="card-title" style="color: #ffca28;background-color: rgba(204, 204, 204, 0.3);">Hendry Wiranto <small>- Database Developer</small></span>
           </div>
           <div class="card-content">
