@@ -32,7 +32,7 @@
         <div class="card medium">
           <div class="card-image">
             <img src="https://scontent-sin6-1.xx.fbcdn.net/v/t1.0-9/1010264_573277219362227_1037195923_n.jpg?oh=73bc88b01e55ed789c3bf55b6103b14f&oe=59BCD5B5">
-            <span class="card-title" style="color: #ffca28;background-color: rgba(204, 204, 204, 0.3);">Hendry Wiranto <small>- Database Developer</small></span>
+            <span class="card-title" style="color: white;background-color: rgba(44, 62, 80,0.5);">Hendry Wiranto <small>- Database Developer</small></span>
           </div>
           <div class="card-content">
             <p>5115100102</p><br>
@@ -47,7 +47,7 @@
           <div class="card medium">
             <div class="card-image" style=" position: relative;">
               <img src="https://scontent-sin6-1.xx.fbcdn.net/v/t1.0-9/14265089_1179936545362421_5780189738549283698_n.jpg?oh=164152ced7a98065dd4d8730143d0ba5&oe=59A1D21E" style="top: -160px; bottom: 145">
-              <span class="card-title" style="color: #ffca28; background-color: rgba(204, 204, 204, 0.3);">Arya Wiranata <small>- UI Designer</small></span>
+              <span class="card-title" style="color: white; background-color: rgba(44, 62, 80,0.5);">Arya Wiranata <small>- UI Designer</small></span>
             </div>
             <div class="card-content">
               <p>5115100163</p><br>
@@ -62,7 +62,7 @@
           <div class="card medium">
             <div class="card-image">
               <img src="https://image.ibb.co/jRrmXa/DSC_0125.jpg">
-              <span class="card-title" style="color: #ffca28; background-color: rgba(204, 204, 204, 0.3);">Rogo Jagad Alit <small>- Backend Developer</small></span>
+              <span class="card-title" style="color: white; background-color: rgba(44, 62, 80,0.5);">Rogo Jagad Alit <small>- Backend Developer</small></span>
             </div>
             <div class="card-content">
               <p>5115100168</p><br>
