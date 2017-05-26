@@ -23,9 +23,6 @@
       <br><br>
       <h1 class="header center orange-text">KULIAHKU THE GAME</h1>
       <br><br>
-      <iframe
-        width="700" height="455" src="https://www.youtube.com/embed/-cgLdZcJ1h4?autoplay=1" frameborder="0" allowfullscreen>
-      </iframe>
       <br><br>
 
     </div>
