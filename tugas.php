@@ -19,13 +19,12 @@
   <link href="css/style_index.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
-   <?php include 'nav.php'; ?>
 
+<?php include 'nav.php'; ?>
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <br><br>
       <h1 class="header center orange-text">KULIAHKU THE GAME</h1>
-      <?php include 'stats_nav.php' ?>
       <a class="btn waves-effect waves-light" href="tambahtugas.php">
         Kerjakan Tugas <i class="material-icons right">playlist_add</i>
       </a>
@@ -50,7 +49,7 @@
           }
           mysqli_close($db);
         }
-        
+
         ?>
       <?php include 'back_button.php' ?>
 

@@ -41,10 +41,10 @@
             while ($row = mysqli_fetch_assoc($sql)){
               ?>
                   <div class="col s12 m6">
-                    <div class="card">
+                    <div class="card" style="height: 450px">
                       <div class="card-image">
-                        <?php echo'<img width="50" height="300" alt="" src="data:image/jpeg;base64,'.base64_encode($row['img']).'">';?>
-                        <span class="card-title"><?php echo $row['nama_matkul']; ?></span>
+                        <?php echo "<img width='50' height='300' src='$row[gambar_url]'>";?>
+                        <span class="card-title" style="background-color:rgba(44, 62, 80,0.5); width:100%"><?php echo $row['nama_matkul']; ?></span>
                         <a class="btn-floating halfway-fab waves-effect waves-light red" href=<?php echo "#modal$row[id]"; ?>><i class="material-icons">add</i></a>
                       </div>
                       <div class="card-content">
@@ -54,8 +54,8 @@
                   </div>
               <?php
               //echo "<a href='#modal$row[id]' class=''>$row[nama_matkul]</a><br>";
-              $save[] = $row['id']; 
-              $i++; 
+              $save[] = $row['id'];
+              $i++;
               }
               ?>
               </div>
@@ -69,7 +69,7 @@
         ?>
 
         <?php
-            for ($i=0; $i < count($save); $i++) { 
+            for ($i=0; $i < count($save); $i++) {
                 include "connect.php";
                 $query = "CALL sp_matkul_konfirm($save[$i])";
                 //echo $query;
@@ -115,7 +115,7 @@
 
 
   <!--  Scripts-->
-  
+
 
   </body>
 </html>

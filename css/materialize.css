@@ -2159,6 +2159,7 @@ html {
  */
 body {
   margin: 0;
+  padding-left: 300px;
 }
 
 /* HTML5 display definitions
@@ -8950,3 +8951,12 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
     margin-bottom: 5em;
   }
 }
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }

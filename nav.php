@@ -1,17 +1,23 @@
-<nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container">
-      <a href="index.php" class="brand-logo">Kuliahku</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="statistik.php"><?php echo $_SESSION['email'] ?></a></li>
-        <li><a href="developer.php">About Us</a></li>
-        <li><a href="logout.php">Logout</a></li>
-      </ul>
+<div style="color: white">
+  <ul id="slide-out" class="side-nav fixed z-depth-3" style="background-color: #3498db;">
 
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="statistik.php"><?php echo $_SESSION['email'] ?></a></li>
-        <li><a href="developer.php">About Us</a></li>
-        <li><a href="logout.php">Logout</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    <li><h3 style="text-align: center; text-transform: uppercase;"><?php echo $_SESSION['name'] ?></h3></li>
+    <br>
+    <?php include 'stats_nav.php' ?>
+    <li><h5 style="padding-left: 5%;">Energi</h5></li>
+    <div class="progress" style="left: 4%;width: 90%;">
+      <div class="determinate" style="width: 70%"></div>
     </div>
-  </nav>
+    <li><a style="color: white" href="matakuliah.php">Mata Kuliah</a></li>
+    <li><a style="color: white" href="leaderboardknowledge.php">Leaderboard</a></li>
+    <li><a style="color: white" href="tugas.php">Tugas</a></li>
+
+
+    <div class="" style="bottom: 10%;position: absolute">
+      <li><a style="color: white" href="statistik.php"><?php echo $_SESSION['email'] ?></a></li>
+      <li><a style="color: white" href="developer.php">About Us</a></li>
+      <li><a style="color: white" href="logout.php">Logout</a></li>
+    </div>
+  </ul>
+</div>
+<main>

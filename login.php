@@ -178,6 +178,7 @@ footer {
             if($row[0] == 0){
               $_SESSION['email']=$_POST['email'];
               $_SESSION['id']=$row[2];
+              $_SESSION['name']=$row[3];
               $_SESSION['loggedIn']=true;
               echo $row[1];
               header("Location: index.php");
@@ -185,7 +186,7 @@ footer {
             else{
               ?>
                 <script type="text/javascript">
-                  alert('<?php echo $row[1]; ?>');
+                  alert('<?php echo "$row[1]"; ?>');
                 </script>
               <?php
             }

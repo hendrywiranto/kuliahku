@@ -18,23 +18,23 @@
   <link href="css/style_index.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
- <?php include 'nav.php'; ?>
+
 
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <br><br>
       <h1 class="header center orange-text">KULIAHKU THE GAME</h1>
-      <?php 
+      <?php
           include "connect.php";
           $query = "CALL sp_tambah_tugas('$_SESSION[id]','$_GET[tugas]','$_GET[cara]');";
           $sql = mysqli_query($db,$query) or die("Query fail : ".mysqli_error());
           $row = mysqli_fetch_array($sql);
           mysqli_close($db);
 
-          include 'stats_nav.php';
+        //  include 'stats_nav.php';
 
           if ($row[0]==-100){
-            echo "$row[1]<br>"; 
+            echo "$row[1]<br>";
           }
           else {
             echo "Energi: $row[energi_s0]<br>";
@@ -42,9 +42,10 @@
             echo "Tugas buruk: $row[tugas_buruk_count]<br>";
           }
           #var_dump($row);
-        
+
       ?>
       <br>
+      <?php include 'nav.php'; ?>
       <!--<a href="kerjakantugas.php?tugas=<?php// echo "$_GET[tugas]";?>">Back</a>-->
       <?php include 'back_button.php';?>
       <br><br>
