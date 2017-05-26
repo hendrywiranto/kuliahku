@@ -25,7 +25,6 @@
     <div class="container">
       <br><br>
       <h1 class="header center orange-text">KULIAHKU THE GAME</h1>
-      <?php include 'stats_nav.php' ?>
       <?php
         if(isset($_SESSION['email'])){
           include "connect.php";
@@ -80,7 +79,7 @@
           }
           mysqli_close($db);
         }
-        
+
         ?>
         <br>
       <?php include 'back_button.php';?>
