@@ -41,7 +41,7 @@
               ?>
                 
                   <div class="col s4">
-                    <div class="card">
+                    <div class="card" style="height: 200px">
                       <span class="card-title" style="font-size: 20px; text-align: center;"><?php echo "$row[nama_tugas]</a><br>"; ?></span>
                       <div class="card-content">
                       </div>
