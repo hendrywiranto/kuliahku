@@ -6,7 +6,7 @@
     <?php include 'stats_nav.php' ?>
     <li><h5 style="padding-left: 5%;">Energi</h5></li>
     <div class="progress" style="left: 4%;width: 90%;">
-      <div class="determinate" style="width: 70%"></div>
+      <div class="determinate" id="progressbar" style="width: <?php echo "$stats[energi]"; ?>%"></div>
     </div>
     <li><a style="color: white" href="matakuliah.php">Mata Kuliah</a></li>
     <li><a style="color: white" href="leaderboardknowledge.php">Leaderboard</a></li>
@@ -20,4 +20,3 @@
     </div>
   </ul>
 </div>
-<main>

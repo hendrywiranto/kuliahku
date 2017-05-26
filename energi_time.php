@@ -1,4 +1,4 @@
- <script>
+<script>
     var energi = <?php
           include "connect.php";
           $query = "SELECT fn_EN(energi_s0,energi_t0) AS energi FROM statistiks WHERE user_id='$_SESSION[id]';";
@@ -19,6 +19,9 @@
           energi=energi+1;
           }
           document.getElementById("energi").innerHTML = energi;
+            var elem = document.getElementById("progressbar"); 
+            var width = energi;
+            elem.style.width = width + '%'; 
         }
     }
   </script>

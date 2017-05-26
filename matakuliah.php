@@ -24,7 +24,7 @@
     <div class="container">
       <br><br>
       <h1 class="header center orange-text">KULIAHKU THE GAME</h1>
-      <?php include 'stats_nav.php' ?>
+
       <a class="btn waves-effect waves-light" href="ambilmatkul.php">
         Ambil mata kuliah <i class="material-icons right">input</i>
       </a>
